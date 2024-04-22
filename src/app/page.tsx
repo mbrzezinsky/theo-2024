@@ -14,10 +14,8 @@ export default async function HomePage() {
                     <div key={image.id + "-" + index} className="w-48 flex flex-col">
                         <img src={image.url}/>
                         <div>{image.name}</div>
-
                     </div>
-                ))
-                }
+                ))}
             </div>
         </main>
     );
