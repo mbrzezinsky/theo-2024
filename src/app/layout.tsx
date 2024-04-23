@@ -7,6 +7,7 @@ import { Inter } from "next/font/google";
 import Topnav from "~/app/_components/topnav";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "~/app/api/uploadthing/core";
+import React from "react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,8 +22,10 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <ClerkProvider>
@@ -31,6 +34,8 @@ export default function RootLayout({
         <body className={`font-sans ${inter.variable} flex flex-col gap-4`}>
           <Topnav />
           {children}
+          {modal}
+          <div id="modal-root" />
         </body>
       </html>
     </ClerkProvider>
