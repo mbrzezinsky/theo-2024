@@ -1,8 +1,7 @@
-import {db} from "~/server/db";
-import {getImages} from "~/server/queries";
+import {getMyImages} from "~/server/queries";
 
 export default async function Images() {
-    const images = await getImages();
+    const images = await getMyImages();
 
     return (
         <div className="flex flex-wrap gap-4">
