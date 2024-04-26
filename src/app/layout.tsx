@@ -8,6 +8,7 @@ import Topnav from "~/app/_components/topnav";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "~/app/api/uploadthing/core";
 import React from "react";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
           </div>
           {modal}
           <div id="modal-root" />
+          <Toaster theme={"dark"} />
         </body>
       </html>
     </ClerkProvider>
